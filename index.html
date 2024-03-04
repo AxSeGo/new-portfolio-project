@@ -4,44 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section id="about">
-        <div>empty block</div>
+    <section id="about" class="about">
+        <div class="empty"></div>
 
         <article>
-            <div>
+            <div class="title">
                 <h1>Creative Developer</h1>
             </div>
 
-            <div>
+            <div class="description">
             <p>I blend imagination with technology to craft digital experiences
                 that stand out. My passion lies in turning complex problems into
-                simple, beautiful solutions. With a keen eye for design and a 
-                oder's precision, I bring ideas to life in ways that engage and 
-                inspire. My portfolio is a canvas where technology meets art,
-                showcasing projects that push boundaries and redefine expectations.
-                Welcome to the intersection of creativity and development, 
-                where every project is a journey of innovation.
+                simple.
             </p>
             </div>
         </article>
     </section>
 
-    <section id="services">
+    <section id="services" class="service service-design">
         <article>
             <figure>
                 <img src="img/diamond.png" width="200" alt="diamond">
             </figure>
 
-            <div>
+            <div class="text">
             <h2>Design</h2>
                 <p>In the realm of Design, I approach every project as an opportunity to tell a visual story.
                 My methodology is grounded in empathy and innovation, striving
@@ -56,13 +53,13 @@
         </article>
    </section>
 
-   <section>
+   <section class="service service-develop">
         <article>
             <figure>
                 <img src="img/octagon.png" width="200" alt="octagon">
             </figure>
 
-            <div>
+            <div class="text">
             <h2>Develop</h2>
                 <p>The Develop section is where ideas come to life through code. Here, I demonstrate my proficiency
                 in transforming design concepts into fully functional digital experiences. My development toolkit is diverse,
@@ -73,12 +70,12 @@
         </article>
     </section>
 
-    <section>
+    <section class="service service-direction">
         <article>
             <figure>
                 <img src="img/triangle.png" width="200"  alt="triangle">
             </figure>
-                <div>
+                <div class="text">
                     <h2>Art Direction</h2>
                     <p>Art Direction is where my vision sets the stage for creative excellence.
                     This section showcases my ability to guide and unify visual elements
@@ -92,8 +89,8 @@
         </article>
     </section>
 
-    <section id="contact">
-        <a href="mailto:axelsearagomez@gmail.com">My Mail</a>
+    <section id="contact" class="contact">
+        <a href="mailto:axelsearagomez@gmail.com">axelsearagomez@gmail.com</a>
     </section>
 
 
