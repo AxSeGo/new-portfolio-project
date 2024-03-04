@@ -8,12 +8,13 @@ html,body {
     --lime: #d0ff94;
     --pink: #d6a3fb;
     --grey: #e5e5e5;
+    --gutter: 3.125vw;
     margin: 0;
     padding: 0;
     background: #000;
     color: white;
     font-size: 30px;
-    font-family: sans-serif;
+    font-family: "Syne", sans-serif;
 }
 
 h1 {
@@ -80,7 +81,7 @@ nav ul li {
 
 nav ul li a {
     color: white;
-    font-family: monospace;
+    font-family: "Space mono", monospace;
 }
 
 /*about section*/
@@ -103,7 +104,7 @@ section.about article .title {
     align-items: flex-end;
     background: var(--blue);
     border-radius: var(--border-radius);
-    padding: 3.125vw;
+    padding: var(--gutter);
 }
 
 section.about article .description {
@@ -112,7 +113,7 @@ section.about article .description {
     align-items: center;
     background-color: var(--pink);
     border-radius: var(--border-radius);
-    padding: 3.125vw;
+    padding: var(--gutter);
     color: black;
 }
 
@@ -148,7 +149,7 @@ section.service .text {
 }
 
 section.service .text a {
-    font-family: monospace;
+    font-family: "Space mono", monospace;
 }
 
 
@@ -193,4 +194,36 @@ section.contact {
 section.contact a {
     font-size: 100px;
     color: white;
+    font-weight: bold;
+}
+
+/*responsive media querries*/
+
+@media only screen and (max-width: 768px) {
+    html,body{
+        --gutter: 6.25vw;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    nav ul li {
+        margin-left: 25px;
+    }
+    section.service article {
+        flex-direction: column;
+    }
+    section.service figure {
+        flex-basis: 25vh;
+    }
+    section.service figure img {
+        width: 20%;
+    }
+    section.contact a {
+        font-size: 50px;
+        transform: rotate(90deg);
+    }
+
 }
