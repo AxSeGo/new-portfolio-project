@@ -3,12 +3,12 @@
 }
 
 html,body {
-    --border-radius: 50px;
+    --border-radius: 100px;
     --blue: #1c47ff;
     --lime: #d0ff94;
     --pink: #d6a3fb;
     --grey: #e5e5e5;
-    --gutter: 3.125vw;
+    --gutter: 3.125vw 6.25vw;
     margin: 0;
     padding: 0;
     background: #000;
@@ -18,7 +18,8 @@ html,body {
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 70px;
+    line-height: 1em;
     margin: 0px;
 }
 
@@ -90,6 +91,7 @@ section.about .empty {
     flex-basis: 37.5vw;
     background-color: var(--grey);
     border-radius: var(--border-radius);
+    transition: flex-basis 1s cubic-bezier(0,.9,.4,1);
 }
 
 section.about article {
@@ -99,12 +101,14 @@ section.about article {
 }
 
 section.about article .title {
-    flex: 2;
+    flex: 1;
     display: flex;
     align-items: flex-end;
     background: var(--blue);
     border-radius: var(--border-radius);
     padding: var(--gutter);
+    transition: flex-basis 1s cubic-bezier(0,.9,.4,1);
+
 }
 
 section.about article .description {
@@ -132,10 +136,13 @@ section.service figure {
     margin: 0;
     background-color: var(--lime);
     border-radius: var(--border-radius);
+    max-width: 62.5vw;
+    transition: flex-basis 1s cubic-bezier(0,.9,.4,1);
+
 }
 
 section.service figure img {
-    width: 50%;
+    width: 40%;
 }
 
 section.service .text {
@@ -152,11 +159,64 @@ section.service .text a {
     font-family: "Space mono", monospace;
 }
 
+/*sevice animation*/
+
+section.service.service-design figure img {
+    animation-name: float;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+section.service.service-develop figure img {
+        animation: rotate 1s infinite alternate cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+section.service.service-direction figure img {
+    animation-name: rotate3d;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-style: preserve-3d;
+  }
+  
+
+@keyframes float {
+    0% {
+        transform: translatey(-5%)
+    }
+    100%{
+        transform: translatey(5%)
+    }
+}
+
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+    
+}
+
+@keyframes rotate3d {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  
 
 /* section settings*/
 
 section.service.service-design figure {
     background-color: var(--pink);
+    perspective: 1000px;
 }
 
 section.service.service-design .text h2,
@@ -189,12 +249,20 @@ section.contact {
     justify-content: center;
     background: linear-gradient(var(--blue), var(--lime) 60%, var(--pink) 70%, white);
     border-radius: var(--border-radius); 
+    /*mix-blend-mode: difference;*/
 }
 
 section.contact a {
     font-size: 100px;
-    color: white;
+    color: rgb(20, 19, 19);
     font-weight: bold;
+    transition: filter 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    will-change: filter;
+}
+
+section.contact a:hover{
+    color: white;
+    filter: blur(20px);
 }
 
 /*responsive media querries*/

@@ -46,12 +46,7 @@
                 <p>In the realm of Design, I approach every project as an opportunity to tell a visual story.
                 My methodology is grounded in empathy and innovation, striving
                 to create designs that resonate with audiences on a profound level.
-                From sleek user interfaces to captivating brand identities,
-                my work is characterized by a meticulous attention to detail and a
-                relentless pursuit of aesthetic perfection.
-                This section highlights a journey through colors, typography,
-                and layouts that not only look stunning but function seamlessly,    
-                embodying the perfect blend of form and function.</p>
+                From sleek user interfaces to captivating brand identities.</p>
             </div>
         </article>
    </section>
@@ -66,9 +61,7 @@
             <h2>Develop</h2>
                 <p>The Develop section is where ideas come to life through code. Here, I demonstrate my proficiency
                 in transforming design concepts into fully functional digital experiences. My development toolkit is diverse,
-                ranging from front-end technologies like HTML, CSS, and JavaScript, to back-end frameworks and databases. I pride myself on writing clean,
-                efficient code that powers responsive websites, applications, and everything in between. This section showcases projects
-                that highlight my technical skills and my ability to solve complex challenges with innovative solutions.</p>
+                ranging from front-end technologies like HTML, CSS, and JavaScript.</p>
             </div>
         </article>
     </section>
@@ -83,18 +76,33 @@
                     <p>Art Direction is where my vision sets the stage for creative excellence.
                     This section showcases my ability to guide and unify visual elements
                     to tell cohesive and compelling stories. With a strategic approach,
-                    I oversee the creative process from concept to execution, ensuring that
-                    every piece of work not only meets but exceeds expectations. Here, you'll find projects
-                    where my leadership in setting styles, choosing visual elements, and directing photographers,
-                    illustrators, and designers has resulted in work that's not just visually stunning,
-                    but emotionally engaging and strategically sound.</p>
+                    I oversee the creative process from concept to execution.</p>
                 </div>
         </article>
     </section>
 
     <section id="contact" class="contact full-screen">
-        <a href="mailto:axelsearagomez@gmail.com">axelsearagomez@gmail.com</a>
+        <a href="mailto:axelsearagomez@gmail.com">axelsearagomez</a>
     </section>
+
+    <script>
+        let emptyElement = document.querySelector('.about .empty');
+        let titleElement = document.querySelector('.about .title');
+
+        let figureElement = document.querySelectorAll('.service figure')
+        
+        window.addEventListener('mousemove', handleMouseMove)
+
+        function handleMouseMove( event ) {
+            emptyElement.style.flexBasis = event.clientX + 'px'
+            titleElement.style.flexBasis = event.clientY /2 + 'px'
+
+            figureElement.forEach( function( elements) {
+                elements.style.flexBasis = (window.innerWidth - event.clientX) + 'px';
+            });
+        }
+
+    </script>
 
 
 </body>
